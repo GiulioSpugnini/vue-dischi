@@ -1,11 +1,12 @@
 <template>
-  <div></div>
+  <div class="text-center">HELLO WORD
+  </div>
 </template>
 
 <script>
 
 export default {
-  name: '#App',
+  name: 'App',
   components: {
 },}
 </script>
