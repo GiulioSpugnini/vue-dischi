@@ -1,12 +1,16 @@
 header {
     background-color: $header_color;
-    height: 100px;
+    height: 80px;
     display: flex;
     align-items: center;
-    color: greenyellow;
+    color: $icon_color;
     i {
         font-size: 50px;
     }
+}
+
+main {
+    margin-top: 80px;
 }
 
 body {
@@ -19,6 +23,7 @@ body {
     color: white;
     background-color: $header_color;
     img {
+        margin-top: 20px;
         width: 150px;
         height: 150px;
     }
