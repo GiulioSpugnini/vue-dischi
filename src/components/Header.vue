@@ -7,7 +7,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <i class="fab fa-spotify"></i>
+    <i class="fab fa-spotify px-4"></i>
   </header>
 </template>
 
@@ -16,7 +16,3 @@ export default {
   name: "Header",
 };
 </script>
-
-<style>
-
-</style>
