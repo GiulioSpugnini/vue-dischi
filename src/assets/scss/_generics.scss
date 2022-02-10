@@ -9,7 +9,17 @@ header {
     }
 }
 
-main {
+body {
     background-color: $main_color;
-    height: 800px;
+}
+
+#album {
+    list-style: none;
+    color: white;
+    background-color: $header_color;
+    margin: 5px;
+    img {
+        width: 200px;
+        height: 200px;
+    }
 }
