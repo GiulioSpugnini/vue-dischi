@@ -14,12 +14,12 @@ body {
 }
 
 #album {
+    width: calc(100%/6);
     list-style: none;
     color: white;
     background-color: $header_color;
-    margin: 5px;
     img {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 150px;
     }
 }

@@ -1,11 +1,11 @@
 <template>
   <main class="container">
-    <ul class="row">
-      <li id="album" class="col-2 text-center" v-for="album in albums" :key="album.title">
-        <img :src="album.poster" alt="">
-        <h2>{{ album.title }}</h2>
-        <h5>{{ album.author }}</h5>
-        <h6>{{ album.year }}</h6>
+    <ul class="d-flex flex-wrap justify-content-between my-3">
+      <li id="album" class="text-center m-3 p-2" v-for="album in albums" :key="album.title">
+        <img class="p-2" :src="album.poster" alt="">
+        <h3 class="p-2">{{ album.title.toUpperCase() }}</h3>
+        <h5 class="text-secondary">{{ album.author }}</h5>
+        <h6 class="text-secondary">{{ album.year }}</h6>
       </li>
     </ul>
   </main>
