@@ -10,7 +10,7 @@
     <i class="fab fa-spotify px-4"></i>
     <select class="form-select">
       <option selected>Seleziona il genere..</option>
-      <option v-for="(genre,index) in genres" :key="index" >One</option>
+      <option v-for="(album,index) in albumsFiltered" :key="index" >One</option>
     </select>
   </header>
 </template>
@@ -18,6 +18,6 @@
 <script>
 export default {
   name: "Header",
-  props: ['albums', 'genres'],
+  props: ['albumsFiltered'],
 };
 </script>

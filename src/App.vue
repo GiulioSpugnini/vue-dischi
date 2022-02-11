@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :albums="albums" :genres="genres" />
+    <Header :albumsFiltered="albumsFiltered" />
     <Main :albums="albums" />
     <Footer />
   </div>
@@ -21,7 +21,7 @@ export default {
   data() {
     return {
       albums: [],
-      genres: [],
+      albumsFiltered: [],
     };
   },
 
@@ -30,18 +30,18 @@ export default {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((res) => {
-          this.albums = res.data.response;
-      this.getGenre();
+          this.albums = res.data.response;    
         });
     },
-    getGenre() {
-     this.genres= this.albums.filter((album) => {
-        if (album.includes(this.albums.genre));
+    albumFilter() {
+     this.albumsFiltered= this.albums.filter((album) => {
+        if (!album.includes(this.albums.genre));
       });
     },
   },
   mounted() {
     this.getAlbum();
+    this.albumFilter();
   },
 };
 </script>
