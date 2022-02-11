@@ -1,7 +1,10 @@
 <template>
   <div>
-    <Header :albums="albums" :albumsFiltered="albumsFiltered" @select-changed="mioMetodo" />
-    <Main :albums="albums" />
+    <Header
+      :albums="albums"
+      @select-changed="getAlbumsRemaning"
+    />
+    <Main :albums="albums" :newAlbums="newAlbums" />
     <Footer />
   </div>
 </template>
@@ -21,7 +24,7 @@ export default {
   data() {
     return {
       albums: [],
-      albumsFiltered: [],
+      newAlbums: '',
     };
   },
 
@@ -30,18 +33,14 @@ export default {
       axios
         .get("https://flynn.boolean.careers/exercises/api/array/music")
         .then((res) => {
-          this.albums = res.data.response;    
+          this.albums = res.data.response;
         });
     },
-    albumFilter() {
-     this.albumsFiltered= this.albums.filter((album) => {
-        if (!album.includes(this.albums.genre));
-      });
-    },
+    getAlbumsRemaning(key){
+     return this.newAlbums=key;
+    }
   },
-  mioMetodo(){
-    console.log('cambiato');
-  },
+  
   mounted() {
     this.getAlbum();
   },

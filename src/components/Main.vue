@@ -15,6 +15,14 @@
 
 export default {
   name: "Main",
-  props:['albums'],
+  props:['albums', 'newAlbums'],
+  computed:{
+    getAlbumsSelected(){
+    return  this.albums.filter(album =>{
+        if(album.genre===this.key);
+      });
+    }
+  }
 };
+
 </script>
