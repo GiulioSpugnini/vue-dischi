@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header :albumsFiltered="albumsFiltered" />
+    <Header :albums="albums" :albumsFiltered="albumsFiltered" @select-changed="mioMetodo" />
     <Main :albums="albums" />
     <Footer />
   </div>
@@ -39,9 +39,11 @@ export default {
       });
     },
   },
+  mioMetodo(){
+    console.log('cambiato');
+  },
   mounted() {
     this.getAlbum();
-    this.albumFilter();
   },
 };
 </script>

@@ -8,9 +8,9 @@
       referrerpolicy="no-referrer"
     />
     <i class="fab fa-spotify px-4"></i>
-    <select class="form-select">
+    <select class="form-select" v-model="key" @change="$emit('select-changed')">
       <option selected>Seleziona il genere..</option>
-      <option v-for="(album,index) in albumsFiltered" :key="index" >One</option>
+      <option v-for="album in albums" :key="album.genre" >{{album.genre}}</option>
     </select>
   </header>
 </template>
@@ -18,6 +18,6 @@
 <script>
 export default {
   name: "Header",
-  props: ['albumsFiltered'],
+  props: ['albums','albumsFiltered'],
 };
 </script>
