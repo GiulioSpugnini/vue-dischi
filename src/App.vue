@@ -2,9 +2,10 @@
   <div>
     <Header
       :albums="albums"
-      @select-changed="getAlbumsRemaning"
+      @select-changed="getAlbumGenre"
+      @select-author-changed="getAlbumAuthor"
     />
-    <Main :albums="albums" :newAlbums="newAlbums" />
+    <Main :albums="albums" :genreSelected="genreSelected" :authorSelected="authorSelected" />
     <Footer />
   </div>
 </template>
@@ -24,7 +25,8 @@ export default {
   data() {
     return {
       albums: [],
-      newAlbums: [],
+      genreSelected: "",
+      authorSelected: "",
     };
   },
   methods: {
@@ -35,9 +37,12 @@ export default {
           this.albums = res.data.response;
         });
     },
-    getAlbumsRemaning(key){
-     return this.newAlbums=key;
-    }
+    getAlbumGenre(key){
+     return this.genreSelected=key;
+    },
+    getAlbumAuthor(key){
+     return this.authorSelected=key;
+    },
   },
   mounted() {
     this.getAlbum();

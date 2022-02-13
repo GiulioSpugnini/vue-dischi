@@ -2,7 +2,6 @@ header {
     background-color: $header_color;
     height: 80px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     color: $icon_color;
     i {
@@ -10,7 +9,7 @@ header {
     }
     .form-select {
         width: 200px;
-        margin-right: 200px;
+        margin-right: 20px;
     }
 }
 
