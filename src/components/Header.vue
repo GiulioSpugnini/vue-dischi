@@ -9,11 +9,10 @@
     />
     <i class="fab fa-spotify px-4"></i>
     <select
-      class="form-select"
+      class="form-select" 
       v-model="key"
-      @change="$emit('select-changed', key)"
-    >
-      <option selected>Seleziona il genere..</option>
+      @change="$emit('select-changed', key)">
+      <option selected >Seleziona il genere..</option>
       <option v-for="(album,index) in albumFilter()" :key="index">
         {{ album }}
       </option>
