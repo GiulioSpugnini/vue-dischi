@@ -27,7 +27,6 @@ export default {
       newAlbums: [],
     };
   },
-
   methods: {
     getAlbum() {
       axios
@@ -40,7 +39,6 @@ export default {
      return this.newAlbums=key;
     }
   },
-  
   mounted() {
     this.getAlbum();
   },
