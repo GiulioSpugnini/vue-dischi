@@ -2,7 +2,7 @@
   <main class="container">
     <ul
       class="d-flex flex-wrap justify-content-center my-1"
-      v-if="(genreSelected==''  && authorSelected=='' )"
+      v-if="(albumsFilteredByGenre.length==0  && albumsFilteredByAuthor==0 )"
     >
       <li
         id="album"
@@ -16,7 +16,7 @@
         <h6 class="text-secondary">{{ album.year }}</h6>
       </li>
     </ul>
-    <ul class="d-flex flex-wrap justify-content-center my-1" v-if="authorSelected=='' && genreSelected!=''">
+    <ul class="d-flex flex-wrap justify-content-center my-1" v-else-if="authorSelected=='' && genreSelected!=''">
       <li
         id="album"
         class="text-center m-2 p-2"

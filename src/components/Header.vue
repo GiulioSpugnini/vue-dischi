@@ -15,8 +15,8 @@
         class="form-select"
         v-model="key"
         @change="$emit('select-changed', key)">
-        <option selected disabled >Seleziona il genere..</option>
-        <option v-for="(album,index) in albumFilter()" :key="index">
+        <option value='All'>Seleziona il genere..</option>
+        <option v-for="(album,index) in albumFilter" :key="index">
           {{ album }}
         </option>
       </select>
@@ -24,8 +24,8 @@
         class="form-select"
         v-model="authorKey"
         @change="$emit('select-author-changed', authorKey)">
-        <option selected disabled >Seleziona l'artista..</option>
-        <option v-for="(album,index) in albumFilterByArtist()" :key="index">
+        <option value='All' >Seleziona l'artista..</option>
+        <option v-for="(album,index) in albumFilterByArtist" :key="index">
           {{ album }}
         </option>
       </select>
@@ -39,11 +39,11 @@ export default {
   props: ["albums"],
   data() {
     return {
-      key: "",
-      authorKey: "",
+      key: "All",
+      authorKey: "All",
     };
   },
-  methods: {
+  computed: {
     albumFilter() {
       const albumFiltered = [];
       this.albums.forEach((album) => {
